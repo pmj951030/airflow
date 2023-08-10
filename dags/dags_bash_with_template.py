@@ -23,8 +23,8 @@ with DAG(
         task_id='bash_t2',
         env={
             'START_DATE' : '{{data_interval_start | ds}}', ## yyyy-mm-dd 형태로 출력을 위해 |ds 넣음
-            'END_DATE' : '{{data_interval_end | ds}}'
-            bash_command='echo $START_DATE && echo $END_DATE'
-        }
+            'END_DATE' : '{{data_interval_end | ds}}',
+        },
+        bash_command='echo $START_DATE && echo $END_DATE'
     )
     bash_t1 >> bash_t2
